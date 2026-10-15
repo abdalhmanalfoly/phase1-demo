@@ -1,0 +1,21 @@
+# environments / caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+# secrets, certificates, local env
+.env
+*.pem
+*.key
+*.crt
+certs/
+# generated logs (keep the folder)
+logs/*
+!logs/.gitkeep
+# third-party browser assets fetched by scripts/fetch_assets.sh (licensing + size)
+sensor-client/vendor/
+# private camera data / future calibration captures
+captures/
+*.mp4
+*.webm

@@ -1,0 +1,36 @@
+PowerShell ===
+python --version
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install -r requirements-dev.txt
+
+Git Bash ===
+cd "/d/collega active/phases 1/saga-3d"
+bash scripts/fetch_assets.sh
+
+mkcert == https maker
+
+winget install FiloSottile.mkcert
+$mkcert = "$env:LOCALAPPDATA\Microsoft\WinGet\Packages\FiloSottile.mkcert_Microsoft.Winget.Source_8wekyb3d8bbwe\mkcert.exe"
+& $mkcert -install
+& $mkcert -CAROOT
+New-Item -ItemType Directory -Force certs
+& $mkcert -cert-file certs/dev.crt -key-file certs/dev.key localhost 127.0.0.1 ::1 ??.??.??.??
+
+
+
+
+
+
+# Open the project
+cd "/d/collega active/phases 1/saga-3d"
+
+# Activate the Windows Python environment (run in PowerShell instead)
+# .\.venv\Scripts\Activate.ps1
+
+# Start the host
+bash scripts/run_host.sh
+
+# Run tests in a second Git Bash terminal
+bash scripts/run_tests.sh
